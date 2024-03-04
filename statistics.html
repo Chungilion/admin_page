@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Thống kê</title>
+    <!-- Include necessary CSS libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css">
+</head>
+<body>
+    <h1>Thống kê kết quả kỳ thi</h1>
+    <div>
+        <label for="filter">Lọc kết quả theo:</label>
+        <select id="filter">
+            <option value="all">Tất cả kỳ thi</option>
+            <!-- Add options for specific exams if needed -->
+        </select>
+    </div>
+    <canvas id="myChart" width="400" height="400"></canvas>
+    
+    <!-- Include necessary JS libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script>
+        // Sample data for demonstration
+        const examResults = [
+            { exam: "Exam 1", score: 85 },
+            { exam: "Exam 2", score: 75 },
+            { exam: "Exam 3", score: 90 },
+            // Add more sample data if needed
+        ];
+
+        // Function to filter results based on selected criteria
+        function filterResults(criteria) {
+            // Implement filtering logic here
+            // For demonstration, we assume the data is filtered correctly
+            return examResults;
+        }
+
+        // Function to render chart with filtered data
+        function renderChart(data) {
+            const labels = data.map(item => item.exam);
+            const scores = data.map(item => item.score);
+
+            const ctx = document.getElementById('myChart').getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Điểm số',
+                        data: scores,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initial rendering of chart with all data
+        renderChart(examResults);
+
+        // Event listener for filter change
+        document.getElementById('filter').addEventListener('change', function() {
+            const selectedCriteria = this.value;
+            const filteredData = filterResults(selectedCriteria);
+            renderChart(filteredData);
+        });
+    </script>
+</body>
+</html>
