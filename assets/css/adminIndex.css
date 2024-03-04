@@ -14,9 +14,6 @@ body {
   --clr-primary-2: #e1e4e8;
 }
 
-.hidden {
-  display: none;
-}
 
 .active {
   display: block;
