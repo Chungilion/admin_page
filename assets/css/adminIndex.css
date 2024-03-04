@@ -1,39 +1,99 @@
-/* Basic CSS styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+/* Your custom CSS code */
+* {
+  box-sizing: border-box;
 }
 
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: var(--font-family-sans);
+  background-color: #f6f8fa;
+}
+
+:root {
+  --clr-primary-1: #bb2019;
+  --clr-primary-2: #e1e4e8;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+  visibility: visible;
+  transform: translateX(0); /* Missing translation value */
+  opacity: 1;
+}
+
+/* Header Navbar */
 .navbar-container {
   background-color: #bb2019;
-  padding: 10px 0;
+  height: 52px;
 }
 
-.navbar-brand {
+.navbar-container .container-fluid {
+  padding: 10px 0 !important;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-container .navbar-brand {
+  display: flex;
+  align-items: center;
   color: #fff;
-  text-decoration: none;
   font-size: 1.25rem;
+  text-decoration: none;
 }
 
-.navbar-nav .nav-link {
+.navbar-container .navbar-brand img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.navbar-container .navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-container .nav-item {
+  margin-right: 20px;
+}
+
+.navbar-container .nav-link {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
 
-.navbar-nav .nav-link:hover {
-  color: #ccc;
+.navbar-container .nav-link:hover {
+  color: #333;
 }
 
+.navbar-container .navbar-button {
+  display: flex;
+}
+
+.navbar-container .btn {
+  margin-right: 10px;
+}
+
+/* Main Content */
 .main {
   padding: 20px;
 }
 
-.card-header h5 {
-  color: #333;
+.main .container-fluid {
+  margin-top: 20px;
 }
 
-.card-subtitle {
-  color: #666;
+/* Table Element */
+.card-header h5,
+.card-header h6 {
+  color: #1b1c1e;
 }
+
+/* Adjustments to other elements as needed */
