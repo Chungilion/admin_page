@@ -1,0 +1,67 @@
+<!-- DAY LA TRANG SIGN IN -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup For Online Exam</title>
+    <link rel="stylesheet" href="./assets/css/auth.css" />
+    <link rel="shortcut icon" href="#" />
+  </head>
+
+  <body>
+    <section class="wrapper">
+      <div class="form signup">
+        <header>Signup</header>
+        <form id="signupForm">
+          <input type="text" placeholder="Full name" required id="signupName" />
+          <input
+            type="text"
+            placeholder="Email address"
+            required
+            id="signupEmail"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            id="signupPassword"
+          />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            required
+            id="signupConfirmPassword"
+          />
+          <div class="checkbox">
+            <input type="checkbox" id="signupCheck" required />
+            <label for="signupCheck">I accept all terms & conditions</label>
+          </div>
+          <input type="submit" value="Signup" />
+        </form>
+      </div>
+
+      <div class="form login">
+        <header>Login</header>
+        <form id="loginForm">
+          <input
+            type="text"
+            placeholder="Email address"
+            required
+            id="loginEmail"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            id="loginPassword"
+          />
+          <a href="#">Forgot password?</a>
+          <input type="submit" value="Login" />
+        </form>
+      </div>
+      <script src="./assets/js/auth.js"></script>
+    </section>
+  </body>
+</html>
