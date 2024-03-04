@@ -33,6 +33,8 @@
     
     <!-- Include necessary JS libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
     <script>
         // Sample data for demonstration
         const examResults = [
@@ -121,14 +123,20 @@
 
         // Function to export report as PDF
         function exportToPDF() {
-            // Implement PDF export functionality
-            alert('Exporting to PDF...');
+            const doc = new jsPDF();
+            doc.text('Thống kê kết quả kỳ thi', 10, 10);
+            doc.text(`Tổng số lần tham gia: ${document.getElementById('totalParticipations').textContent}`, 10, 20);
+            doc.text(`Tỷ lệ hoàn thành: ${document.getElementById('completionRate').textContent}`, 10, 30);
+            doc.text(`Điểm trung bình: ${document.getElementById('averageScore').textContent}`, 10, 40);
+            doc.save('report.pdf');
         }
 
         // Function to export report as Excel
         function exportToExcel() {
-            // Implement Excel export functionality
-            alert('Exporting to Excel...');
+            const wb = XLSX.utils.book_new();
+            const ws = XLSX.utils.table_to_sheet(document.getElementById('myChart'));
+            XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+            XLSX.writeFile(wb, 'report.xlsx');
         }
     </script>
 </body>
