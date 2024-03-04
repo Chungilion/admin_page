@@ -1,0 +1,269 @@
+<!-- DAY LA TRANG KHI VUA KHOI DONG DU AN VA CHUA DUOC DANG NHAP -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEB PTIT</title>
+
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/profile-user.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- HEADER NAVBAR -->
+    <div class="header-navbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="left-side">
+              <!-- hidden navbar -->
+              <div class="navbar-btn hidden">
+                <i class="fa-solid fa-bars"></i>
+              </div>
+              <ul class="navbar-full-menu hidden">
+                <li class="exam-item"><a href="./main.html">Bài tập</a></li>
+                <li class="exam-item"><a href="./quiz.html">Luyện tập</a></li>
+                <li class="exam-item"><a href="./quiz.html">Giữa kỳ</a></li>
+                <li class="exam-item"><a href="./quiz.html">Cuối kỳ</a></li>
+                <li class="exam-item">
+                  <a href="./instructor.html">Hướng dẫn</a>
+                </li>
+                <br />
+                <!-- <hr /> -->
+                <br />
+                <li class="user-list">
+                  <a href="" class="user-name">Nguyễn Kim Dũng</a>
+                  <a href="" class="user-id">B21DCVT018</a>
+                </li>
+                <li class="exam-item">
+                  <a href="./profile.html">Hồ sơ</a>
+                </li>
+                <li class="exam-item">
+                  <a href="./profile.html">Lớp học</a>
+                </li>
+                <li class="exam-item">
+                  <a href="./index.html">Đăng xuất</a>
+                </li>
+              </ul>
+              <div class="logo">
+                <img src="./assets/img/logo_ptit.png" alt="logo" />
+              </div>
+              <article class="navbar-item">
+                <a href="./main.html">Bài tập</a>
+              </article>
+              <article class="navbar-item exams">Các kỳ thi</article>
+              <ul class="exam-menu">
+                <li class="exam-item"><a href="./quiz.html">Luyện tập</a></li>
+                <li class="exam-item"><a href="./quiz.html">Giữa kỳ</a></li>
+                <li class="exam-item"><a href="./quiz.html">Cuối kỳ</a></li>
+              </ul>
+              <article class="navbar-item">
+                <a href="./instructor.html">Hướng dẫn</a>
+              </article>
+              <article class="navbar-item"></article>
+              <article class="navbar-item"></article>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-side">
+              <div class="user">
+                <div class="user-logo">
+                  <img src="./assets/img/16typh.jpg" alt="user logo" />
+                </div>
+                <button type="button" class="user-btn">
+                  <i class="user-icon fa-solid fa-sort-down"></i>
+                </button>
+                <div class="menu-user">
+                  <ul>
+                    <li class="user-list">
+                      <a href="" class="user-name">Nguyễn Kim Dũng</a>
+                      <a href="" class="user-id">B21DCVT018</a>
+                    </li>
+                    <li class="user-list">
+                      <a href="./profile.html">Hồ sơ</a>
+                    </li>
+                    <li class="user-list">
+                      <a href="">Lớp học</a>
+                    </li>
+                    <li class="user-list">
+                      <a href="./index.html">Đăng xuất</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-content">
+      <div class="container">
+        <div class="profile-body">
+          <div class="profile-nav">
+            <div class="profile-about">
+              <div class="profile-ava">
+                <img src="./assets/img/16typh.jpg" alt="avatar" />
+              </div>
+              <div class="profile-name">Nguyễn Kim Dũng</div>
+              <div class="profile-edit">Cập nhật thông tin</div>
+            </div>
+            <div class="profile-info">
+              <ul>
+                <li class="account">
+                  <i class="icon fa-solid fa-user"></i>
+                  Tài khoản : B21DCVT018
+                </li>
+                <li class="classroom">
+                  <i class="icon fa-solid fa-landmark"></i>
+                  Lớp: E21CQCN02-B
+                </li>
+                <li class="email">
+                  <i class="icon fa-solid fa-envelope"></i>
+                  Email: DungNK.B21VT018@stu.ptit.edu.vn
+                </li>
+                <li class="date">
+                  <i class="icon fa-solid fa-calendar-days"></i>
+                  Ngày sinh: 02/10/2003
+                </li>
+                <li class="gender">
+                  <i class="icon fa-solid fa-venus-mars"></i>
+                  Giới tính: Nam
+                </li>
+                <li class="address">
+                  <i class="icon fa-solid fa-location-dot"></i>
+                  Địa điểm:
+                </li>
+                <li class="phone">
+                  <i class="icon fa-solid fa-phone"></i>
+                  SĐT:
+                </li>
+                <li class="about">
+                  <i class="icon fa-solid fa-address-card"></i>
+                  Giới thiệu:
+                </li>
+                
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="profile-main">
+            <div class="main-navigation">
+              <ul>
+                <li class="active">
+                  <i class="icon fa-solid fa-book-open"></i>
+                  Tổng quan
+                </li>
+                <li>
+                  <i class="icon fa-solid fa-clock-rotate-left"></i>
+                  Lịch sử
+                </li>
+                <li>
+                  <i class="icon fa-solid fa-book-open"></i>
+                  Thực hành
+                </li>
+                <li>
+                  <i class="icon fa-solid fa-book-open"></i>
+                  Học tập
+                </li>
+              </ul>
+            </div>
+            <div class="main-list">
+              <div class="list-title">Danh sách các bài thi đã tham gia</div>
+
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Tên bài thi</th>
+                    <th>Điểm số</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Moe</td>
+                    <td>mary@example.com</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                  </tr>
+                  <tr>
+                    <td>11</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
