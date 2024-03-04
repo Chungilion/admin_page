@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Information Form</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Exam Information Form</h1>
+    <form id="examForm">
+        <label for="examName">Exam Name:</label><br>
+        <input type="text" id="examName" name="examName"><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+
+        <label for="examType">Exam Type:</label><br>
+        <select id="examType" name="examType">
+            <option value="free">Free</option>
+            <option value="specificTime">Specific Time</option>
+        </select><br><br>
+
+        <h2>Questions</h2>
+        <div id="questionsContainer">
+            <!-- Questions will be dynamically added here -->
+        </div>
+
+        <button type="button" onclick="addQuestion()">Add Question</button><br><br>
+
+        <input type="file" id="excelFile" accept=".xls,.xlsx"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function addQuestion() {
+            // Create question elements dynamically
+            var questionContainer = document.createElement("div");
+            questionContainer.classList.add("question");
+
+            var questionInput = document.createElement("input");
+            questionInput.type = "text";
+            questionInput.placeholder = "Enter question";
+            questionInput.classList.add("question-input");
+
+            var deleteButton = document.createElement("button");
+            deleteButton.innerHTML = "Delete";
+            deleteButton.classList.add("delete-button");
+            deleteButton.onclick = function() {
+                questionContainer.remove();
+            };
+
+            questionContainer.appendChild(questionInput);
+            questionContainer.appendChild(deleteButton);
+
+            document.getElementById("questionsContainer").appendChild(questionContainer);
+        }
+
+        document.getElementById("examForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Form submission handling goes here
+        });
+
+        document.getElementById("excelFile").addEventListener("change", function(event) {
+            var file = event.target.files[0];
+            // Excel file processing goes here
+        });
+    </script>
+</body>
+</html>
