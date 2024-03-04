@@ -6,7 +6,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-family: var(--font-family-sans);
-  background-color: #fd0303;
+  background-color: #faf6f6;
 }
 
 :root {
@@ -26,6 +26,10 @@ body {
 .navbar-container {
   background-color: #bb2019;
   height: 52px;
+}
+
+.nav-link .nav-item-font {
+  color: #333;
 }
 
 .navbar-brand {
