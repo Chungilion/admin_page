@@ -10,11 +10,15 @@
 <body>
     <h1>Thống kê kết quả kỳ thi</h1>
     <div>
-        <label for="filter">Lọc kết quả theo:</label>
-        <select id="filter">
+        <label for="filterExam">Lọc kết quả theo kỳ thi:</label>
+        <select id="filterExam">
             <option value="all">Tất cả kỳ thi</option>
             <!-- Add options for specific exams if needed -->
         </select>
+    </div>
+    <div>
+        <label for="filterDate">Lọc kết quả theo ngày tháng:</label>
+        <input type="date" id="filterDate">
     </div>
     <canvas id="myChart" width="400" height="400"></canvas>
     <div>
@@ -22,15 +26,19 @@
         <p>Tỷ lệ hoàn thành: <span id="completionRate"></span></p>
         <p>Điểm trung bình: <span id="averageScore"></span></p>
     </div>
+    <div>
+        <button onclick="exportToPDF()">Xuất PDF</button>
+        <button onclick="exportToExcel()">Xuất Excel</button>
+    </div>
     
     <!-- Include necessary JS libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <script>
         // Sample data for demonstration
         const examResults = [
-            { exam: "Exam 1", score: 85 },
-            { exam: "Exam 2", score: 75 },
-            { exam: "Exam 3", score: 90 },
+            { exam: "Exam 1", score: 85, date: "2024-03-01" },
+            { exam: "Exam 2", score: 75, date: "2024-03-02" },
+            { exam: "Exam 3", score: 90, date: "2024-03-03" },
             // Add more sample data if needed
         ];
 
@@ -48,10 +56,15 @@
         }
 
         // Function to filter results based on selected criteria
-        function filterResults(criteria) {
-            // Implement filtering logic here
-            // For demonstration, we assume the data is filtered correctly
-            return examResults;
+        function filterResults(examFilter, dateFilter) {
+            let filteredData = examResults;
+            if (examFilter !== 'all') {
+                filteredData = filteredData.filter(item => item.exam === examFilter);
+            }
+            if (dateFilter) {
+                filteredData = filteredData.filter(item => item.date === dateFilter);
+            }
+            return filteredData;
         }
 
         // Function to render chart with filtered data
@@ -92,11 +105,31 @@
         renderChart(examResults);
 
         // Event listener for filter change
-        document.getElementById('filter').addEventListener('change', function() {
-            const selectedCriteria = this.value;
-            const filteredData = filterResults(selectedCriteria);
+        document.getElementById('filterExam').addEventListener('change', function() {
+            const selectedExam = this.value;
+            const selectedDate = document.getElementById('filterDate').value;
+            const filteredData = filterResults(selectedExam, selectedDate);
             renderChart(filteredData);
         });
+
+        document.getElementById('filterDate').addEventListener('change', function() {
+            const selectedExam = document.getElementById('filterExam').value;
+            const selectedDate = this.value;
+            const filteredData = filterResults(selectedExam, selectedDate);
+            renderChart(filteredData);
+        });
+
+        // Function to export report as PDF
+        function exportToPDF() {
+            // Implement PDF export functionality
+            alert('Exporting to PDF...');
+        }
+
+        // Function to export report as Excel
+        function exportToExcel() {
+            // Implement Excel export functionality
+            alert('Exporting to Excel...');
+        }
     </script>
 </body>
 </html>
