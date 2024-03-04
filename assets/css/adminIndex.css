@@ -1,98 +1,100 @@
-/* Custom PTIT Theme Colors */
-:root {
-    --primary-color: #0056b3; /* Primary color for buttons and links */
-    --secondary-color: #b7d0e2; /* Secondary color for backgrounds and highlights */
-}
-
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa; /* Set background color */
-}
-
-.container-fluid {
+/* Your custom CSS code */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: var(--font-family-sans);
+    background-color: #f6f8fa;
+  }
+  
+  :root {
+    --clr-primary-1: #bb2019;
+    --clr-primary-2: #e1e4e8;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .active {
+    display: block;
+    visibility: visible;
+    transform: translateX(0); /* Missing translation value */
+    opacity: 1;
+  }
+  
+  /* Header Navbar */
+  .navbar-container {
+    background-color: #bb2019;
+    height: 52px;
+  }
+  
+  .navbar-container .container-fluid {
+    padding: 10px 0 !important;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-container .navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+  
+  .navbar-container .navbar-brand img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .navbar-container .navbar-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-container .nav-item {
+    margin-right: 20px;
+  }
+  
+  .navbar-container .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .navbar-container .nav-link:hover {
+    color: #333;
+  }
+  
+  .navbar-container .navbar-button {
+    display: flex;
+  }
+  
+  .navbar-container .btn {
+    margin-right: 10px;
+  }
+  
+  /* Main Content */
+  .main {
     padding: 20px;
-}
-
-/* Navbar Styles */
-.navbar-container {
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
-.navbar-brand {
-    color: #fff;
-}
-
-.navbar-nav .nav-link {
-    color: #fff;
-}
-
-/* Main Content Styles */
-.main {
-    padding: 20px;
-}
-
-.card {
-    background-color: var(--secondary-color);
-    border: none;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.card-header {
-    background-color: var(--primary-color);
-    color: #fff;
-    border-radius: 10px 10px 0 0;
-}
-
-.card-title {
-    margin-bottom: 0;
-}
-
-.card-subtitle {
-    color: #6c757d;
-}
-
-.card-body {
-    padding: 20px;
-}
-
-/* Button Styles */
-.btn {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #003366;
-}
-
-/* Table Styles */
-.table {
-    background-color: #fff;
-    border-radius: 10px;
-}
-
-.table thead th {
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f2f2f2;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .navbar-nav {
-        flex-direction: column;
-    }
-}
+  }
+  
+  .main .container-fluid {
+    margin-top: 20px;
+  }
+  
+  /* Table Element */
+  .card-header h5,
+  .card-header h6 {
+    color: #1b1c1e;
+  }
+  
+  /* Adjustments to other elements as needed */
+  
