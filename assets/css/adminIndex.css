@@ -1,0 +1,98 @@
+/* Custom PTIT Theme Colors */
+:root {
+    --primary-color: #0056b3; /* Primary color for buttons and links */
+    --secondary-color: #b7d0e2; /* Secondary color for backgrounds and highlights */
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Set background color */
+}
+
+.container-fluid {
+    padding: 20px;
+}
+
+/* Navbar Styles */
+.navbar-container {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.navbar-brand {
+    color: #fff;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+}
+
+/* Main Content Styles */
+.main {
+    padding: 20px;
+}
+
+.card {
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-title {
+    margin-bottom: 0;
+}
+
+.card-subtitle {
+    color: #6c757d;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Button Styles */
+.btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #003366;
+}
+
+/* Table Styles */
+.table {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.table thead th {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+}
