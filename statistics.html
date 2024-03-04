@@ -17,6 +17,11 @@
         </select>
     </div>
     <canvas id="myChart" width="400" height="400"></canvas>
+    <div>
+        <p>Tổng số lần tham gia: <span id="totalParticipations"></span></p>
+        <p>Tỷ lệ hoàn thành: <span id="completionRate"></span></p>
+        <p>Điểm trung bình: <span id="averageScore"></span></p>
+    </div>
     
     <!-- Include necessary JS libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
@@ -28,6 +33,19 @@
             { exam: "Exam 3", score: 90 },
             // Add more sample data if needed
         ];
+
+        // Function to calculate statistics
+        function calculateStatistics(data) {
+            const totalParticipations = data.length;
+            const completionRate = (data.filter(item => item.score >= 50).length / totalParticipations) * 100;
+            const totalScore = data.reduce((acc, item) => acc + item.score, 0);
+            const averageScore = totalScore / totalParticipations;
+            return {
+                totalParticipations,
+                completionRate: completionRate.toFixed(2) + "%",
+                averageScore: averageScore.toFixed(2)
+            };
+        }
 
         // Function to filter results based on selected criteria
         function filterResults(criteria) {
@@ -62,6 +80,12 @@
                     }
                 }
             });
+
+            // Update statistics
+            const statistics = calculateStatistics(data);
+            document.getElementById('totalParticipations').textContent = statistics.totalParticipations;
+            document.getElementById('completionRate').textContent = statistics.completionRate;
+            document.getElementById('averageScore').textContent = statistics.averageScore;
         }
 
         // Initial rendering of chart with all data
