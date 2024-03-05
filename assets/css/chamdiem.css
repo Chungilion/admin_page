@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: var(--font-family-sans);
+  /* height: 10000px; */
+  background-color: #f6f8fa;
+}
+
+:root {
+  --clr-primary-1: #bb2019;
+}
+.score-container {
+  font-size: 24px; /* Điều chỉnh kích thước phù hợp */
+}
+.mark-content {
+  background-color: #fff;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.mark-main-info {
+  display: flex;
+}
+.mark-img {
+  max-width: 250px;
+}
+.mark-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mark-info {
+  margin-top: 20px;
+  margin-left: 50px;
+}
+.mark-header {
+  display: flex;
+}
+.mark-header .level {
+  color: var(--clr-primary-1);
+  padding-left: 5px;
+}
+.mark-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+.mark-button .mark-btn {
+  background-color: var(--clr-primary-1);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 6px 10px;
+  font-size: 1rem;
+}
+
+/* CIRCLE POINT */
+.point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.round {
+  transform: rotate(-90deg);
+  transition: all 1s ease-in-out;
+
+  /* SVG */
+  fill: none;
+  stroke: red;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 0 999;
+}
+@media (max-width: 992px) {
+  .mark-img {
+    display: none;
+  }
+  .mark-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: 60vh;
+  }
+}
+@media (max-width: 576px) {
+  .mark-img {
+    display: none;
+  }
+  .mark-content {
+    flex-direction: column;
+    text-align: center;
+    height: 60vh;
+  }
+}

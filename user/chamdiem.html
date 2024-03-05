@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chấm điểm</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/chamdiem.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- google fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <!-- HEADER NAVBAR -->
+    <div class="header-navbar">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="left-side">
+                <!-- hidden navbar -->
+                <div class="navbar-btn hidden">
+                  <i class="fa-solid fa-bars"></i>
+                </div>
+                <ul class="navbar-full-menu hidden">
+                  <li class="exam-item"><a href="./main.html">Bài tập</a></li>
+                  <li class="exam-item"><a href="./quiz.html">Luyện tập</a></li>
+                  <li class="exam-item"><a href="./quiz.html">Giữa kỳ</a></li>
+                  <li class="exam-item"><a href="./quiz.html">Cuối kỳ</a></li>
+                  <li class="exam-item">
+                    <a href="./instructor.html">Hướng dẫn</a>
+                  </li>
+                  <br />
+                  <!-- <hr /> -->
+                  <br />
+                  <li class="user-list">
+                    <a href="" class="user-name">Nguyễn Kim Dũng</a>
+                    <a href="" class="user-id">B21DCVT018</a>
+                  </li>
+                  <li class="exam-item">
+                    <a href="./profile.html">Hồ sơ</a>
+                  </li>
+                  <li class="exam-item">
+                    <a href="">Lớp học</a>
+                  </li>
+                  <li class="exam-item">
+                    <a href="./index.html">Đăng xuất</a>
+                  </li>
+                </ul>
+                <div class="logo">
+                  <img src="./assets/img/logo_ptit.png" alt="logo" />
+                </div>
+                <article class="navbar-item">
+                  <a href="./main.html">Bài tập</a>
+                </article>
+                <article class="navbar-item exams">Các kỳ thi</article>
+                <ul class="exam-menu">
+                  <li class="exam-item"><a href="./quiz.html">Luyện tập</a></li>
+                  <li class="exam-item"><a href="./quiz.html">Giữa kỳ</a></li>
+                  <li class="exam-item"><a href="./quiz.html">Cuối kỳ</a></li>
+                </ul>
+                <article class="navbar-item">
+                  <a href="./instructor.html">Hướng dẫn</a>
+                </article>
+                <article class="navbar-item"></article>
+                <article class="navbar-item"></article>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="right-side">
+                <div class="user">
+                  <div class="user-logo">
+                    <img src="./assets/img/16typh.jpg" alt="user logo" />
+                  </div>
+                  <button type="button" class="user-btn">
+                    <i class="user-icon fa-solid fa-sort-down"></i>
+                  </button>
+                  <div class="menu-user">
+                    <ul>
+                      <li class="user-list">
+                        <a href="" class="user-name">Nguyễn Kim Dũng</a>
+                        <a href="" class="user-id">B21DCVT018</a>
+                      </li>
+                      <li class="user-list">
+                        <a href="./profile.html">Hồ sơ</a>
+                      </li>
+                      <li class="user-list">
+                        <a href="">Lớp học</a>
+                      </li>
+                      <li class="user-list">
+                        <a href="./index.html">Đăng xuất</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="mark-content">
+                <div class="mark-main-info">
+                    <div class="mark-img">
+                        <img src="./assets/img/answer.webp" alt="answer" />
+                    </div>
+                    <div class="mark-info">
+                        <div class="mark-title">
+                            <div class="mark-header">
+                                <span> Bài thi mức độ : </span>
+                                <span class="level"> Luyện tập</span>
+                            </div>
+                            <p id="date-time"></p>
+                        </div>
+                        <div class="mark-bars">
+                            <ul>
+                                <li class="bar-item">
+                                    <p>Passed : </p>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success progress-bar-striped" style="width: 50%"></div>
+                                    </div>
+                                    <br />
+                                </li>
+                                <li class="bar-item">
+                                    <p>Errors : </p>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-danger progress-bar-striped" style="width: 50%"></div>
+                                    </div>
+                                    <br />
+                                </li>
+                                <li class="bar-item"> 
+                                    <p>Improve : </p>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-warning progress-bar-striped" style="width: 40%"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="score" class="score-container"></div>
+                <div class="point">
+                    <svg class="round" viewbox="0 0 100 100" width="200" height="200" data-percent="50">
+                      <circle cx="50" cy="50" r="40" />  
+                    </svg>
+                </div>
+            </div>
+            <div class="mark-button">
+                <a href="./main.html"><button type="button" class="mark-btn" >Trở về trang chủ</button></a>
+                <a href="./quiz.html"><button type="button" class="mark-btn">Làm lại</button></a>
+                <a href="./quiz.html"><button type="button" class="mark-btn">Chế độ giữa kì</button></a>
+                <a href="./quiz.html"><button type="button" class="mark-btn">Chế độ cuối kì</button></a>
+
+            </div>
+        </div>
+
+        <!-- Thêm các tệp JavaScript cần thiết nếu có -->
+        <script src="./assets/js/main.js"></script>
+        <script src="./assets/js/chamdiem.js"></script>
+</body>
+
+</html>
