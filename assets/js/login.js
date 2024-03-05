@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add click event listener to the button
   button.addEventListener('click', function() {
       // Redirect to admin.html
-      window.location.href = './admin_login.html';
+      window.location.href = 'admin_login.html';
   });
 });
 
