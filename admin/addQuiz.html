@@ -3,34 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Creation/Edit Form</title>
+    <title>Form nhập thông tin kỳ thi</title>
     <style>
         /* Add your CSS styling here */
     </style>
 </head>
 <body>
-    <h1>Exam Creation/Edit Form</h1>
+    <h1>Form nhập thông tin kỳ thi</h1>
     <form id="examForm">
-        <label for="examName">Exam Name:</label><br>
-        <input type="text" id="examName" name="examName"><br><br>
+        <label for="examName">Tên kỳ thi:</label><br>
+        <input type="text" id="examName" name="examName" required><br><br>
 
-        <label for="examDescription">Exam Description:</label><br>
-        <textarea id="examDescription" name="examDescription"></textarea><br><br>
+        <label for="examDescription">Mô tả:</label><br>
+        <textarea id="examDescription" name="examDescription" required></textarea><br><br>
 
-        <label for="examType">Exam Type:</label><br>
-        <select id="examType" name="examType">
-            <option value="free">Free</option>
-            <option value="specificTime">Specific Time</option>
+        <label for="examType">Loại kỳ thi:</label><br>
+        <select id="examType" name="examType" required>
+            <option value="tudo">Tự do</option>
+            <option value="thoigian">Thời gian cụ thể</option>
         </select><br><br>
 
-        <label for="questionList">Question List:</label><br>
-        <ul id="questionList"></ul><br>
+        <label for="questionList">Danh sách câu hỏi:</label><br>
+        <div id="questionContainer">
+            <!-- Placeholder for questions -->
+        </div>
 
-        <button type="button" onclick="addQuestion()">Add Question</button><br><br>
+        <!-- Input for Excel file -->
+        <input type="file" id="excelFile" accept=".xlsx, .xls" required><br><br>
 
-        <button type="submit">Save Exam</button>
+        <button type="button" onclick="importQuestions()">Nhập câu hỏi từ Excel</button><br><br>
+
+        <button type="submit">Lưu thông tin kỳ thi</button>
     </form>
 
-    <script src="examForm.js"></script>
+    <script src="addQuiz.html"></script>
 </body>
 </html>
