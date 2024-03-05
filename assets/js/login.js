@@ -63,6 +63,18 @@ loginForm.addEventListener('submit', (event) => {
   }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Get reference to the button
+  var button = document.getElementById('topRightButton');
+
+  // Add click event listener to the button
+  button.addEventListener('click', function() {
+      // Redirect to admin.html
+      window.location.href = './admin_login.html';
+  });
+});
+
+
 const loginStatusNoti = (isPositive, message) => {
   const loginStatus = document.querySelector('#login__status_noti');
   toggleClass(loginStatus, 'd-block');
