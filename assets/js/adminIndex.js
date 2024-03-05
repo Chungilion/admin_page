@@ -20,24 +20,30 @@ var examDetails = {
     questions: questions
 };
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Retrieve exam details from local storage
-    var formData = JSON.parse(localStorage.getItem('formData'));
-
-    // Display exam details in the table
-    if (formData) {
-        document.getElementById("examName").textContent = formData.examName;
-        document.getElementById("description").textContent = formData.description;
-        document.getElementById("examType").textContent = formData.examType;
-
-        var questionsContainer = document.getElementById("questionsContainer");
-        formData.questions.forEach(function(question, index) {
-            var row = document.createElement("tr");
-            row.innerHTML = "<td>" + (index + 1) + "</td><td>" + question + "</td>";
-            questionsContainer.appendChild(row);
-        });
-    }
-});
+// Function to populate the table with quiz data from local storage
+function populateQuizTable() {
+    const tableBody = document.getElementById('questionsContainer');
+    const quizzes = JSON.parse(localStorage.getItem('quizzes')) || [];
+  
+    // Clear existing table rows
+    tableBody.innerHTML = '';
+  
+    // Populate the table with quiz data
+    quizzes.forEach(function(quiz, index) {
+      const row = `<tr>
+                    <th scope="row">${index + 1}</th>
+                    <td>${quiz.name}</td>
+                    <td>${quiz.description}</td>
+                    <td>${quiz.type}</td>
+                    <td>${quiz.file}</td>
+                  </tr>`;
+      tableBody.innerHTML += row;
+    });
+  }
+  
+  // Call the function to populate the table when the page loads
+  populateQuizTable();
+  
 
 // Function to display exam details in the table
 /*function displayExamDetails(examDetails) {
