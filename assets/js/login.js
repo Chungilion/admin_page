@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   // Get reference to the button
-  var backbutton = document.getElementById('backButton');
+  var backbutton = document.getElementById('topRightButton_3');
 
   // Add click event listener to the button
   backbutton.addEventListener('click', function() {
