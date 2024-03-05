@@ -20,8 +20,27 @@ var examDetails = {
     questions: questions
 };
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve exam details from local storage
+    var formData = JSON.parse(localStorage.getItem('formData'));
+
+    // Display exam details in the table
+    if (formData) {
+        document.getElementById("examName").textContent = formData.examName;
+        document.getElementById("description").textContent = formData.description;
+        document.getElementById("examType").textContent = formData.examType;
+
+        var questionsContainer = document.getElementById("questionsContainer");
+        formData.questions.forEach(function(question, index) {
+            var row = document.createElement("tr");
+            row.innerHTML = "<td>" + (index + 1) + "</td><td>" + question + "</td>";
+            questionsContainer.appendChild(row);
+        });
+    }
+});
+
 // Function to display exam details in the table
-function displayExamDetails(examDetails) {
+/*function displayExamDetails(examDetails) {
     var tableBody = document.getElementById('examTableBody');
     var newRow = tableBody.insertRow();
 
@@ -41,7 +60,7 @@ function displayExamDetails(examDetails) {
     var records = JSON.parse(localStorage.getItem('examRecords')) || [];
     records.push(examDetails);
     localStorage.setItem('examRecords', JSON.stringify(records));
-}
+}*/
 
 // Load exam details from local storage and display in the table
 function loadExamDetailsFromLocalStorage() {

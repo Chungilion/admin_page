@@ -35,105 +35,31 @@
         <button type="submit">Submit</button>
     </form>
 
-    <script>
-        // Event listener for form submission
-        document.getElementById("examForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            // Collect form data
-            var formData = {
-                examName: document.getElementById("examName").value,
-                description: document.getElementById("description").value,
-                examType: document.getElementById("examType").value,
-                questions: []
-            };
-    
-            // Collect questions
-            var questionInputs = document.querySelectorAll(".question-input");
-            questionInputs.forEach(function(input) {
-                formData.questions.push(input.value);
-            });
-    
-            // Example: Log the form data to the console
-            console.log("Form Data:", formData);
-    
-            // Perform additional actions like validation or sending data to a server
-            // You can replace this with your desired functionality
-        });
-    
-        // Event listener for file input change
-        document.getElementById("excelFile").addEventListener("change", function(event) {
-            var file = event.target.files[0];
-            // Example: Log the file details to the console
-            console.log("Selected File:", file);
-    
-            // You can add code here to read and process the Excel file
-            // For processing Excel files, you might need to use libraries like SheetJS (https://sheetjs.com/)
-        });
-    
-        // Function to add a new question
-        function addQuestion() {
-            var questionContainer = document.createElement("div");
-            questionContainer.classList.add("question");
-    
-            var questionInput = document.createElement("input");
-            questionInput.type = "text";
-            questionInput.placeholder = "Enter question";
-            questionInput.classList.add("question-input");
-    
-            var deleteButton = document.createElement("button");
-            deleteButton.innerHTML = "Delete";
-            deleteButton.classList.add("delete-button");
-            deleteButton.onclick = function() {
-                questionContainer.remove();
-            };
-    
-            questionContainer.appendChild(questionInput);
-            questionContainer.appendChild(deleteButton);
-    
-            document.getElementById("questionsContainer").appendChild(questionContainer);
-        }
-    
-        // Function to populate the form with exam details for editing
-        function populateFormWithExamDetails(examDetails) {
-            document.getElementById("examName").value = examDetails.examName;
-            document.getElementById("description").value = examDetails.description;
-            document.getElementById("examType").value = examDetails.examType;
-    
-            // Populate questions if available
-            if (examDetails.questions && examDetails.questions.length > 0) {
-                examDetails.questions.forEach(function(question) {
-                    var questionContainer = document.createElement("div");
-                    questionContainer.classList.add("question");
-    
-                    var questionInput = document.createElement("input");
-                    questionInput.type = "text";
-                    questionInput.value = question;
-                    questionInput.classList.add("question-input");
-    
-                    var deleteButton = document.createElement("button");
-                    deleteButton.innerHTML = "Delete";
-                    deleteButton.classList.add("delete-button");
-                    deleteButton.onclick = function() {
-                        questionContainer.remove();
-                    };
-    
-                    questionContainer.appendChild(questionInput);
-                    questionContainer.appendChild(deleteButton);
-    
-                    document.getElementById("questionsContainer").appendChild(questionContainer);
-                });
-            }
-        }
-    
-        // Example usage: populate the form with existing exam details
-        var examDetails = {
-            examName: "Example Exam",
-            description: "This is an example exam.",
-            examType: "free",
-            questions: ["Question 1", "Question 2", "Question 3"]
-        };
-    
-        populateFormWithExamDetails(examDetails);
-    </script>    
+<script>
+// Event listener for form submission
+document.getElementById("examForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    // Collect form data
+    var formData = {
+        examName: document.getElementById("examName").value,
+        description: document.getElementById("description").value,
+        examType: document.getElementById("examType").value,
+        questions: []
+    };
+
+    // Collect questions
+    var questionInputs = document.querySelectorAll(".question-input");
+    questionInputs.forEach(function(input) {
+        formData.questions.push(input.value);
+    });
+
+    // Save exam details to local storage
+    localStorage.setItem('formData', JSON.stringify(formData));
+
+    // Redirect to the page that displays the added table
+    window.location.href = "./admin.html";
+});
+
+</script>    
 </body>
 </html>
