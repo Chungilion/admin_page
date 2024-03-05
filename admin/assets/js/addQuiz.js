@@ -1,33 +1,38 @@
-// Example JavaScript for handling quiz form submission
-document.getElementById('quizForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
-    
-    // Retrieve form data
-    const quizName = document.getElementById('quizName').value;
-    const quizDescription = document.getElementById('quizDescription').value;
-    const quizType = document.getElementById('quizType').value;
-    const questionsFile = document.getElementById('questionsFile').files[0];
-  
-    // Construct quiz object
-    const quiz = {
-      name: quizName,
-      description: quizDescription,
-      type: quizType,
-      file: questionsFile ? questionsFile.name : 'N/A' // Use file name if available, otherwise mark as N/A
-    };
-  
-    // Save quiz data to local storage
-    let quizzes = JSON.parse(localStorage.getItem('quizzes')) || [];
-    quizzes.push(quiz);
-    localStorage.setItem('quizzes', JSON.stringify(quizzes));
-  
-    // Optionally, you can clear the form after submission
-    document.getElementById('quizForm').reset();
-  
-    // You can provide feedback to the user that the quiz has been added successfully
-    alert('Quiz added successfully!');
-  
-    // Redirect to admin page
-    window.location.href = './admin.html';
+function addQuestion() {
+  var questionList = document.getElementById("questionList");
+  var li = document.createElement("li");
+  var inputField = document.createElement("input");
+  inputField.type = "text";
+  inputField.placeholder = "Enter question...";
+  var deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+  deleteButton.type = "button";
+  deleteButton.onclick = function() {
+      li.remove();
+  };
+  li.appendChild(inputField);
+  li.appendChild(deleteButton);
+  questionList.appendChild(li);
+}
+
+document.getElementById("examForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  var formData = {
+      examName: document.getElementById("examName").value,
+      examDescription: document.getElementById("examDescription").value,
+      examType: document.getElementById("examType").value,
+      questions: []
+  };
+
+  var questionItems = document.querySelectorAll("#questionList li input[type='text']");
+  questionItems.forEach(function(item) {
+      formData.questions.push(item.value);
   });
-  
+
+  console.log(formData); // You can send this data to server-side for processing
+
+  // Reset form after submission
+  document.getElementById("examForm").reset();
+  document.getElementById("questionList").innerHTML = ""; // Clear question list
+});
