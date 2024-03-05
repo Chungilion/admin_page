@@ -56,8 +56,6 @@ loginForm.addEventListener('submit', (event) => {
   // end validation
   if (username === ADMIN && password === PASSWORD) {
     window.location.href = './admin/admin.html';
-  }else if(username === USERNAME && password === PASSWORD){
-    window.location.href = './user/main.html'
   }else {
     loginStatusNoti(false, 'Tài khoản hoặc mật khẩu không hợp lệ.');
   }
@@ -82,6 +80,71 @@ document.addEventListener('DOMContentLoaded', function() {
   button.addEventListener('click', function() {
       // Redirect to admin.html
       window.location.href = 'index.html';
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Get reference to the button
+  var button = document.getElementById('backButton');
+
+  // Add click event listener to the button
+  button.addEventListener('click', function() {
+      // Redirect to admin.html
+      window.location.href = 'index.html';
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const loginForm = document.getElementById('login_form_id');
+  const registerForm = document.getElementById('register_form_id');
+
+  loginForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('login__user').value;
+      const password = document.getElementById('login__pw').value;
+      
+      // Retrieve user data from localStorage
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      
+      // Check if the user exists
+      const user = users.find(user => user.email === email && user.password === password);
+      
+      if (user) {
+          alert('Login successful!');
+          window.location.href = 'index.html';
+      } else {
+          alert('Invalid email or password');
+      }
+  });
+
+  registerForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('register__user').value;
+      const password = document.getElementById('register__pw').value;
+      
+      // Retrieve user data from localStorage
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      
+      // Check if the user already exists
+      const existingUser = users.find(user => user.email === email);
+      
+      if (existingUser) {
+          alert('User already exists');
+          return;
+      }
+      
+      // Add the new user to the array
+      const newUser = {
+          email: email,
+          password: password
+      };
+      users.push(newUser);
+      
+      // Update the users data in localStorage
+      localStorage.setItem('users', JSON.stringify(users));
+      
+      alert('Registration successful!');
+      // Redirect the user to another page or perform further actions
   });
 });
 

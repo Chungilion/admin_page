@@ -8,7 +8,7 @@
     />
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="favicon.png" />
-    <title>Đăng nhập</title>
+    <title>Đăng ký</title>
     <link rel="stylesheet" href="./assets/css/login.css" />
   </head>
   <body>
@@ -20,7 +20,7 @@
     </div>
 
     <div class="container">
-      <button id="topRightButton_2" class="top-right-button">User</button>
+      <button id="backButton" class="top-right-button">Back</button>
     </div>
 
     <div class="container-fluid-login">
@@ -31,20 +31,20 @@
           </div>
           <div class="row">
             <div class="col">
-              <div class="login__main__title">
-                <p>Đăng nhập</p>
-                <p><b>ADMIN</b></p>
+              <div class="register__main__title">
+                <p>Đăng ký</p>
+                <p><b>PTIT Code</b></p>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col">
               <form
-                id="login_form_id"
+                id="register_form_id"
                 class="login__main__form"
                 method="post"
               >
-                <label for="login__user">Tài khoản</label>
+                <label for="register__user">Tài khoản</label>
                 <input
                   type="text"
                   name="username"
@@ -52,25 +52,9 @@
                   value=""
                   autofocus
                 />
-                <label for="login__pw">Mật khẩu</label>
+                <label for="register__pw">Mật khẩu</label>
                 <input type="password" name="password" id="login__pw" />
-                <div>
-                  <div class="checkbox__login">
-                    <input
-                      type="checkbox"
-                      value="1"
-                      name="remember"
-                      id="login__checkbox"
-                    />
-                    <label class="cb__label" for="login__checkbox"
-                      >Ghi nhớ</label
-                    >
-                  </div>
-                  <a class="login__main__forgetpass link--red"
-                    >Quên mật khẩu?</a
-                  >
-                </div>
-                <button type="submit"><span>Đăng nhập</span></button>
+                <button type="submit"><span>Đăng ký</span></button>
               </form>
             </div>
           </div>
