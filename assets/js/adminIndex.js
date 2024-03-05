@@ -42,42 +42,4 @@ function populateQuizTable() {
   }
   
   // Call the function to populate the table when the page loads
-  populateQuizTable();
-  
-
-// Function to display exam details in the table
-/*function displayExamDetails(examDetails) {
-    var tableBody = document.getElementById('examTableBody');
-    var newRow = tableBody.insertRow();
-
-    var cellIndex = newRow.insertCell(0);
-    var cellName = newRow.insertCell(1);
-    var cellDescription = newRow.insertCell(2);
-    var cellExamType = newRow.insertCell(3);
-    var cellQuestions = newRow.insertCell(4);
-
-    cellIndex.innerHTML = tableBody.rows.length - 1;
-    cellName.innerHTML = examDetails.examName;
-    cellDescription.innerHTML = examDetails.description;
-    cellExamType.innerHTML = examDetails.examType;
-    cellQuestions.innerHTML = examDetails.questions.join(', ');
-
-    // Save exam details to local storage
-    var records = JSON.parse(localStorage.getItem('examRecords')) || [];
-    records.push(examDetails);
-    localStorage.setItem('examRecords', JSON.stringify(records));
-}*/
-
-// Load exam details from local storage and display in the table
-function loadExamDetailsFromLocalStorage() {
-    var records = JSON.parse(localStorage.getItem('examRecords')) || [];
-    records.forEach(function(record) {
-        displayExamDetails(record);
-    });
-}
-
-// Display exam details
-displayExamDetails(examDetails);
-
-// Load exam details from local storage on page load
-loadExamDetailsFromLocalStorage();
+populateQuizTable();
