@@ -22,7 +22,7 @@ var examDetails = {
 
 // Function to populate the table with quiz data from local storage
 function populateQuizTable() {
-    const tableBody = document.getElementById('questionsContainer');
+    const tableBody = document.getElementById('testTableBody');
     const quizzes = JSON.parse(localStorage.getItem('quizzes')) || [];
   
     // Clear existing table rows
