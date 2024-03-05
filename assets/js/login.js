@@ -50,11 +50,6 @@ loginForm.addEventListener('submit', (event) => {
     loginStatusNoti(false, 'Email không hợp lệ.');
     return;
   }
-//   if (passwordValidation(password).isValidated === false) {
-//     loginStatusNoti(false, passwordValidation(password).message);
-//     return;
-//   }
-  // end validation
   if (username === ADMIN && password === PASSWORD) {
     window.location.href = './admin/admin.html';
   }else {
