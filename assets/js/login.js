@@ -55,7 +55,7 @@ loginForm.addEventListener('submit', (event) => {
 //   }
   // end validation
   if (username === ADMIN && password === PASSWORD) {
-    window.location.href = 'admin.html';
+    window.location.href = './admin/admin.html';
   }else {
     loginStatusNoti(false, 'Tài khoản hoặc mật khẩu không hợp lệ.');
   }
