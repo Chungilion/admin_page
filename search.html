@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Viewer</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+    <!-- Include jsPDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <h1>Student Result Viewer</h1>
+    <div id="searchForm">
+        <label for="searchInput">Search by Name or Student ID:</label>
+        <input type="text" id="searchInput" name="searchInput">
+        <button onclick="searchStudent()">Search</button>
+        <button id="exportButton" style="margin-left: 10px;">Export Results as PDF</button>
+    </div>
+    <div id="studentResults">
+        <!-- Student results will be displayed here -->
+    </div>
+
+    <script>
+        // Function to search for a student
+        function searchStudent() {
+            // Dummy student data (you can replace it with actual data)
+            var studentData = [
+                {
+                    name: "John Doe",
+                    studentID: "123456",
+                    exams: [
+                        {
+                            examName: "Math Test",
+                            score: 85,
+                            status: "Completed",
+                            timeTaken: "2 hours",
+                            answers: ["A", "B", "C"],
+                            correctAnswers: ["A", "B", "C"],
+                            explanations: ["Explanation 1", "Explanation 2", "Explanation 3"]
+                        },
+                        {
+                            examName: "Science Test",
+                            score: 75,
+                            status: "Incomplete",
+                            timeTaken: "1.5 hours",
+                            answers: ["A", "B", "C"],
+                            correctAnswers: ["A", "C", "B"],
+                            explanations: ["Explanation 1", "Explanation 2", "Explanation 3"]
+                        }
+                    ]
+                },
+                // Add more student data as needed
+            ];
+
+            var searchInput = document.getElementById("searchInput").value.toLowerCase();
+            var studentResultsContainer = document.getElementById("studentResults");
+            studentResultsContainer.innerHTML = "";
+
+            // Search for the student matching the search input
+            var foundStudent = studentData.find(function(student) {
+                return student.name.toLowerCase().includes(searchInput) || student.studentID.includes(searchInput);
+            });
+
+            if (foundStudent) {
+                var studentInfo = document.createElement("div");
+                studentInfo.innerHTML = "<h2>" + foundStudent.name + " (" + foundStudent.studentID + ")</h2>";
+
+                foundStudent.exams.forEach(function(exam) {
+                    var examDetails = document.createElement("div");
+                    examDetails.innerHTML = "<h3>" + exam.examName + "</h3>" +
+                        "<p>Score: " + exam.score + "</p>" +
+                        "<p>Status: " + exam.status + "</p>" +
+                        "<p>Time Taken: " + exam.timeTaken + "</p>";
+
+                    var questionDetails = "<ul>";
+                    for (var i = 0; i < exam.answers.length; i++) {
+                        questionDetails += "<li>Question " + (i + 1) + ": Your Answer - " + exam.answers[i] + ", Correct Answer - " + exam.correctAnswers[i] + ", Explanation - " + exam.explanations[i] + "</li>";
+                    }
+                    questionDetails += "</ul>";
+
+                    examDetails.innerHTML += questionDetails;
+
+                    studentInfo.appendChild(examDetails);
+                });
+
+                studentResultsContainer.appendChild(studentInfo);
+            } else {
+                studentResultsContainer.innerHTML = "<p>No student found with the given name or ID.</p>";
+            }
+        }
+
+        // Event listener for the export button
+        document.getElementById("exportButton").addEventListener("click", function() {
+            var studentResultsContainer = document.getElementById("studentResults");
+            var content = studentResultsContainer.innerHTML;
+
+            // Create a new jsPDF instance
+            var doc = new jsPDF();
+
+            // Set font size and type
+            doc.setFontSize(12);
+            doc.setFont("helvetica", "normal");
+
+            // Add content to the PDF
+            doc.fromHTML(content, 10, 10);
+
+            // Save the PDF file
+            doc.save("student_exam_results.pdf");
+        });
+    </script>
+</body>
+</html>
