@@ -13,7 +13,7 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
       name: quizName,
       description: quizDescription,
       type: quizType,
-      file: questionsFile.name // Assuming you want to store the file name
+      file: questionsFile ? questionsFile.name : 'N/A' // Use file name if available, otherwise mark as N/A
     };
   
     // Save quiz data to local storage
@@ -26,5 +26,8 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
   
     // You can provide feedback to the user that the quiz has been added successfully
     alert('Quiz added successfully!');
+  
+    // Redirect to admin page
+    window.location.href = './admin.html';
   });
   
