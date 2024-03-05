@@ -2,18 +2,29 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
 }
 
 h1, h2, h3 {
-    color: #333;
+    color: #FF0000; /* Red */
+    text-align: center;
 }
 
 form {
     margin-bottom: 20px;
+    width: 80%;
+    max-width: 600px;
 }
 
 label {
     font-weight: bold;
+    color: #FF0000; /* Red */
 }
 
 input[type="text"],
@@ -22,21 +33,24 @@ select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #FF0000; /* Red */
     border-radius: 5px;
+    color: #333;
+    box-sizing: border-box;
 }
 
 button {
     padding: 8px 16px;
-    background-color: #4CAF50;
+    background-color: #FF0000; /* Red */
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #cc0000; /* Darker red */
 }
 
 #questionContainer {
@@ -53,26 +67,34 @@ button:hover {
 }
 
 .question button {
-    background-color: #f44336;
-    margin-left: 5px;
+    background-color: #FF0000; /* Red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .question button:hover {
-    background-color: #d32f2f;
+    background-color: #cc0000; /* Darker red */
 }
 
 #displaySection {
     display: none;
     margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
 }
 
 #displaySection h2 {
     margin-bottom: 10px;
+    color: #FF0000; /* Red */
 }
 
 #displaySection p,
 #displaySection ul {
     margin-bottom: 10px;
+    color: #333;
 }
 
 #displaySection ul {
