@@ -37,6 +37,8 @@ const passwordValidation = (password) => {
   status.isValidated = true;
   return status;
 };
+
+
 const loginForm = document.getElementById('login_form_id');
 loginForm.addEventListener('submit', (event) => {
   event.preventDefault();
