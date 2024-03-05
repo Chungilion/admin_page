@@ -84,10 +84,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   // Get reference to the button
-  var button = document.getElementById('backButton');
+  var backbutton = document.getElementById('backButton');
 
   // Add click event listener to the button
-  button.addEventListener('click', function() {
+  backbutton.addEventListener('click', function() {
       // Redirect to admin.html
       window.location.href = 'index.html';
   });
