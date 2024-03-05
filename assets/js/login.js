@@ -1,4 +1,3 @@
-const USERNAME = 'test@gmail.com';
 const PASSWORD = '123123';
 const ADMIN = 'admin@gmail.com';
 const PASSWORD_RULE = {
@@ -95,6 +94,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Get reference to the button
+  var button = document.getElementById('registry');
+
+  // Add click event listener to the button
+  button.addEventListener('click', function() {
+      // Redirect to admin.html
+      window.location.href = 'register.html';
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
   const loginForm = document.getElementById('login_form_id');
   const registerForm = document.getElementById('register_form_id');
 
@@ -112,9 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (user) {
           alert('Login successful!');
           window.location.href = 'index.html';
-      } else {
-          alert('Invalid email or password');
-      }
+      } 
   });
 
   registerForm.addEventListener('submit', function(event) {
@@ -144,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('users', JSON.stringify(users));
       
       alert('Registration successful!');
-      // Redirect the user to another page or perform further actions
+      window.location.href = "index.html";
   });
 });
 
