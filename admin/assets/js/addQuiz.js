@@ -17,6 +17,7 @@ function importQuestions() {
           // Convert Excel data to array of questions
           var questions = XLSX.utils.sheet_to_json(sheet, { header: 'A' });
           displayQuestions(questions);
+          displayExamInfo();
       };
       
       reader.readAsArrayBuffer(file);
@@ -48,28 +49,42 @@ function displayQuestions(questions) {
   });
 }
 
-document.getElementById("examForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent form submission
-
-  // Get other form data
+// Display exam information in the display section
+function displayExamInfo() {
   var examName = document.getElementById("examName").value;
   var examDescription = document.getElementById("examDescription").value;
   var examType = document.getElementById("examType").value;
 
-  // Get questions from the form
-  var questions = [];
+  document.getElementById("displayExamName").innerText = examName;
+  document.getElementById("displayExamDescription").innerText = examDescription;
+  document.getElementById("displayExamType").innerText = examType;
+
   var questionElements = document.querySelectorAll(".question input[type='text']");
+  var displayQuestionList = document.getElementById("displayQuestionList");
+  displayQuestionList.innerHTML = ""; // Clear previous questions
+
   questionElements.forEach(function(questionElement) {
-      questions.push(questionElement.value);
+      var li = document.createElement("li");
+      li.textContent = questionElement.value;
+      displayQuestionList.appendChild(li);
   });
 
+  // Show the display section
+  document.getElementById("displaySection").style.display = "block";
+}
+
+document.getElementById("examForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form submission
+
   // Print data to console for now (you can replace this with your logic)
-  console.log("Tên kỳ thi:", examName);
-  console.log("Mô tả:", examDescription);
-  console.log("Loại kỳ thi:", examType);
-  console.log("Danh sách câu hỏi:", questions);
+  console.log("Thông tin kỳ thi:");
+  console.log("Tên kỳ thi:", document.getElementById("examName").value);
+  console.log("Mô tả:", document.getElementById("examDescription").value);
+  console.log("Loại kỳ thi:", document.getElementById("examType").value);
+  console.log("Danh sách câu hỏi:", document.querySelectorAll(".question input[type='text']").values());
 
   // Reset the form after submission
   document.getElementById("examForm").reset();
   document.getElementById("questionContainer").innerHTML = ""; // Clear question container
+  document.getElementById("displaySection").style.display = "none"; // Hide the display section
 });

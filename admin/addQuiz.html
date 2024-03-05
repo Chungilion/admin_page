@@ -29,13 +29,23 @@
         </div>
 
         <!-- Input for Excel file -->
-        <input type="file" id="excelFile" accept=".xlsx, .xls"><br><br>
+        <input type="file" id="excelFile" accept=".xlsx, .xls" required><br><br>
 
         <button type="button" onclick="importQuestions()">Nhập câu hỏi từ Excel</button><br><br>
 
         <button type="submit">Lưu thông tin kỳ thi</button>
     </form>
 
-    <script src="addQuiz.js"></script>
+    <!-- Display section for imported questions and other exam information -->
+    <div id="displaySection">
+        <h2>Thông tin kỳ thi</h2>
+        <p><strong>Tên kỳ thi:</strong> <span id="displayExamName"></span></p>
+        <p><strong>Mô tả:</strong> <span id="displayExamDescription"></span></p>
+        <p><strong>Loại kỳ thi:</strong> <span id="displayExamType"></span></p>
+        <h3>Danh sách câu hỏi:</h3>
+        <ul id="displayQuestionList"></ul>
+    </div>
+
+    <script src="examForm.js"></script>
 </body>
 </html>
