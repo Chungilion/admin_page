@@ -98,18 +98,16 @@ document.addEventListener('DOMContentLoaded', function() {
       const email = document.getElementById('login__user').value;
       const password = document.getElementById('login__pw').value;
       
+      if (validateEmail(email) === false) {
+        loginStatusNoti(false, 'Email không hợp lệ.');
+        return;
+      }
       // Retrieve user data from localStorage
       const users = JSON.parse(localStorage.getItem('users')) || [];
       
       // Check if the user exists
       const user = users.find(user => user.email === email && user.password === password);
       
-      if (validateEmail(email) === false) {
-        loginStatusNoti(false, 'Email không hợp lệ.');
-        alert("Email không hợp lệ!");
-        return;
-      }
-
       if (user) {
           alert('Đăng nhập thành công!');
           window.location.href = './user/main.html';

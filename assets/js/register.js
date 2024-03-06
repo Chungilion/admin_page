@@ -56,18 +56,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = document.getElementById('register__user').value;
         const password = document.getElementById('register__pw').value;
         
+        if (validateEmail(email) === false) {
+          loginStatusNoti(false, 'Email không hợp lệ.');
+          return;
+        }
         // Retrieve user data from localStorage
         let users = JSON.parse(localStorage.getItem('users')) || [];
         
         // Check if the user already exists
         const existingUser = users.find(user => user.email === email);
         
-        if (validateEmail(email) === false) {
-          loginStatusNoti(false, 'Email không hợp lệ.');
-          alert("Email không hợp lệ!");
-          return;
-        }
-
         if (existingUser) {
             alert('Người dùng đã tồn tại!');
             return;
