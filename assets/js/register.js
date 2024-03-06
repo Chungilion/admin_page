@@ -62,6 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Check if the user already exists
         const existingUser = users.find(user => user.email === email);
         
+        if (validateEmail(email) === false) {
+          loginStatusNoti(false, 'Email không hợp lệ.');
+          return;
+        }
+
         if (existingUser) {
             alert('User already exists');
             return;
