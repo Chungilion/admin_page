@@ -28,6 +28,10 @@ body {
   height: 52px;
 }
 
+.nav-item .nav-link {
+  background-color: red; 
+}
+
 .nav-link .nav-item-font {
   color: #333;
 }
