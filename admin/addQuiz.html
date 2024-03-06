@@ -3,37 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tạo/Chỉnh sửa Kỳ thi</title>
+    <title>Exam Information Form</title>
 </head>
 <body>
-    <h1>Form Nhập Thông Tin Kỳ Thi</h1>
-
+    <h1>Exam Information Form</h1>
     <form id="examForm">
-        <label for="examName">Tên Kỳ Thi:</label><br>
-        <input type="text" id="examName" name="examName"><br><br>
-
-        <label for="examDescription">Mô Tả:</label><br>
-        <textarea id="examDescription" name="examDescription" rows="4" cols="50"></textarea><br><br>
-
-        <label for="examType">Loại Kỳ Thi:</label><br>
-        <select id="examType" name="examType">
-            <option value="free">Tự Do</option>
-            <option value="specificTime">Thời Gian Cụ Thể</option>
-        </select><br><br>
-
-        <div id="questionsContainer">
-            <!-- Câu hỏi sẽ được thêm vào đây -->
-        </div>
-
-        <button type="button" onclick="addQuestion()">Thêm câu hỏi</button><br><br>
-
-        <input type="submit" value="Submit">
+        <label for="examName">Exam Name:</label>
+        <input type="text" id="examName" required><br>
+        
+        <label for="examDescription">Exam Description:</label><br>
+        <textarea id="examDescription" rows="4" cols="50" required></textarea><br>
+        
+        <label for="examType">Exam Type:</label>
+        <select id="examType" required>
+            <option value="free">Free</option>
+            <option value="timed">Timed</option>
+        </select><br>
+        
+        <label for="questionList">Question List:</label><br>
+        <textarea id="questionList" rows="6" cols="50" required></textarea><br>
+        
+        <button type="button" onclick="submitForm()">Submit</button>
     </form>
 
-    <h2>Thông Tin Kỳ Thi</h2>
-    <div id="examDisplay">
-        <!-- Thông tin kỳ thi sẽ được hiển thị ở đây -->
-    </div>
+    <div id="displayInfo"></div>
 
     <script src="addQuiz.js"></script>
 </body>
