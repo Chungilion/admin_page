@@ -44,16 +44,11 @@ loginForm.addEventListener('submit', (event) => {
   const formData = new FormData(event.target);
   const username = formData.get('username');
   const password = formData.get('password');
-  // validation
   if (validateEmail(username) === false) {
     loginStatusNoti(false, 'Email không hợp lệ.');
     return;
   }
-//   if (passwordValidation(password).isValidated === false) {
-//     loginStatusNoti(false, passwordValidation(password).message);
-//     return;
-//   }
-  // end validation
+
   if (username === ADMIN && password === PASSWORD) {
     window.location.href = './admin/admin.html';
   }else {

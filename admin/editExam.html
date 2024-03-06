@@ -25,12 +25,9 @@
     </div>
 
     <script>
-        // Lấy thông tin kỳ thi từ URL
         const urlParams = new URLSearchParams(window.location.search);
         const examId = urlParams.get('id');
 
-        // Mô phỏng việc lấy thông tin từ backend
-        // Trong thực tế, bạn sẽ gọi API để lấy thông tin kỳ thi dựa trên examId
         const examData = {
             id: examId,
             name: "Midterm Exam",
@@ -39,25 +36,18 @@
             completionRate: "90%"
         };
 
-        // Hiển thị thông tin kỳ thi trên trang
         document.getElementById('examName').value = examData.name;
         document.getElementById('examAmount').value = examData.amount;
         document.getElementById('examAverageScores').value = examData.averageScores;
         document.getElementById('examCompletionRate').value = examData.completionRate;
 
-        // Hàm để lưu các thay đổi
         function saveChanges() {
-            // Lấy thông tin mới từ các ô input
             const newAmount = document.getElementById('examAmount').value;
             const newAverageScores = document.getElementById('examAverageScores').value;
             const newCompletionRate = document.getElementById('examCompletionRate').value;
-
-            // Thực hiện lưu các thay đổi (mô phỏng việc gửi dữ liệu đến backend)
             console.log("New Amount: " + newAmount);
             console.log("New Average Scores: " + newAverageScores);
             console.log("New Completion Rate: " + newCompletionRate);
-
-            // Thực hiện các thay đổi khác (ví dụ: gửi dữ liệu đến backend)
         }
     </script>
 </body>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Thống kê</title>
-    <!-- Include necessary CSS libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css">
 </head>
 <body>
@@ -30,20 +29,20 @@
         <button onclick="exportToExcel()">Xuất Excel</button>
     </div>
     
-    <!-- Include necessary JS libraries -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
     <script>
-        // Sample data for demonstration
+
         const examResults = [
             { exam: "Exam 1", score: 85, date: "2024-03-01" },
             { exam: "Exam 2", score: 75, date: "2024-03-02" },
             { exam: "Exam 3", score: 90, date: "2024-03-03" },
-            // Add more sample data if needed
+
         ];
 
-        // Function to calculate statistics
+  
         function calculateStatistics(data) {
             const totalParticipations = data.length;
             const completionRate = (data.filter(item => item.score >= 50).length / totalParticipations) * 100;
@@ -56,7 +55,6 @@
             };
         }
 
-        // Function to filter results based on selected criteria
         function filterResults(examFilter, dateFilter) {
             let filteredData = examResults;
             if (examFilter !== 'all') {
@@ -68,7 +66,6 @@
             return filteredData;
         }
 
-        // Function to render chart with filtered data
         function renderChart(data) {
             const labels = data.map(item => item.exam);
             const scores = data.map(item => item.score);
@@ -95,17 +92,14 @@
                 }
             });
 
-            // Update statistics
+
             const statistics = calculateStatistics(data);
             document.getElementById('totalParticipations').textContent = statistics.totalParticipations;
             document.getElementById('completionRate').textContent = statistics.completionRate;
             document.getElementById('averageScore').textContent = statistics.averageScore;
         }
 
-        // Initial rendering of chart with all data
         renderChart(examResults);
-
-        // Event listener for filter change
         document.getElementById('filterExam').addEventListener('change', function() {
             const selectedExam = this.value;
             const selectedDate = document.getElementById('filterDate').value;
@@ -120,7 +114,6 @@
             renderChart(filteredData);
         });
 
-        // Function to export report as PDF
         function exportToPDF() {
             const doc = new jsPDF();
             doc.text('Thống kê kết quả kỳ thi', 10, 10);
@@ -129,8 +122,6 @@
             doc.text(`Điểm trung bình: ${document.getElementById('averageScore').textContent}`, 10, 40);
             doc.save('report.pdf');
         }
-
-        // Function to export report as Excel
         function exportToExcel() {
             const wb = XLSX.utils.book_new();
             const ws = XLSX.utils.table_to_sheet(document.getElementById('myChart'));

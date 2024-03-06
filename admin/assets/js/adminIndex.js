@@ -1,4 +1,4 @@
-// Sample data for exams and users
+
 let exams = [
   { 
       id: 1, 
@@ -33,7 +33,7 @@ let users = [
   },
 ];
 
-// Function to display exams in the table
+
 function displayExams() {
   const examListBody = document.getElementById('examListBody');
   examListBody.innerHTML = '';
@@ -43,7 +43,7 @@ function displayExams() {
   });
 }
 
-// Function to display users in the table
+
 function displayUsers() {
   const userListBody = document.getElementById('userListBody');
   userListBody.innerHTML = '';
@@ -53,13 +53,11 @@ function displayUsers() {
   });
 }
 
-// Function to add a new exam
 function addExam(newExam) {
   exams.push(newExam);
   displayExams();
 }
 
-// Function to edit an existing exam
 function editExam(id, updatedExam) {
   const index = exams.findIndex(exam => exam.id === id);
   if (index !== -1) {
@@ -70,19 +68,18 @@ function editExam(id, updatedExam) {
   }
 }
 
-// Function to delete an exam
 function deleteExam(id) {
   exams = exams.filter(exam => exam.id !== id);
   displayExams();
 }
 
-// Function to add a new user
+
 function addUser(newUser) {
   users.push(newUser);
   displayUsers();
 }
 
-// Function to edit an existing user
+
 function editUser(id, updatedUser) {
   const index = users.findIndex(user => user.id === id);
   if (index !== -1) {
@@ -93,13 +90,13 @@ function editUser(id, updatedUser) {
   }
 }
 
-// Function to delete a user
+
 function deleteUser(id) {
   users = users.filter(user => user.id !== id);
   displayUsers();
 }
 
-// Add event listeners to the buttons
+
 document.getElementById('addExamBtn').addEventListener('click', function() {
   const newExam = {
       id: exams.length + 1,
@@ -154,6 +151,6 @@ document.getElementById('deleteUserBtn').addEventListener('click', function() {
   deleteUser(id);
 });
 
-// Display initial data
+
 displayExams();
 displayUsers();
