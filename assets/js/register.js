@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = document.getElementById('register__user').value;
         const password = document.getElementById('register__pw').value;
         
-        if (validateEmail(email) === false) {
+        if (validateEmail(document.getElementById('register__user')) === false) {
           loginStatusNoti(false, 'Email không hợp lệ.');
           return;
         }
