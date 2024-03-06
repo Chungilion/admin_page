@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update the users data in localStorage
         localStorage.setItem('users', JSON.stringify(users));
         
-        alert('Đăng ký thành công!');
+        console.log('Đăng ký thành công');
+        //alert('Đăng ký thành công!');
         window.location.href = "index.html";
     });
   });
