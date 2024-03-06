@@ -87,4 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-
+  const loginStatusNoti = (isPositive, message) => {
+    const loginStatus = document.querySelector('#login__status_noti');
+    toggleClass(loginStatus, 'd-block');
+    const loginStatusMessage = document.querySelector(
+      '#login__status_noti > p > span'
+    );
+    loginStatusMessage.innerHTML = message;
+    loginStatusMessage.style.color = isPositive ? 'green' : 'red';
+  };
