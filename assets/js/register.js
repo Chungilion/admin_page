@@ -37,12 +37,8 @@ const PASSWORD_RULE = {
   };
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Get reference to the button
     var backbutton = document.getElementById('topRightButton_3');
-  
-    // Add click event listener to the button
     backbutton.addEventListener('click', function() {
-        // Redirect to admin.html
         window.location.href = 'index.html';
     });
 });
@@ -60,10 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
           loginStatusNoti(false, 'Email không hợp lệ.');
           return;
         }
-        // Retrieve user data from localStorage
         let users = JSON.parse(localStorage.getItem('users')) || [];
         
-        // Check if the user already exists
         const existingUser = users.find(user => user.email === email);
         
         if (existingUser) {
@@ -71,18 +65,15 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Add the new user to the array
         const newUser = {
             email: email,
             password: password
         };
         users.push(newUser);
         
-        // Update the users data in localStorage
         localStorage.setItem('users', JSON.stringify(users));
         
         alert("Đăng ký thành công");
-        //alert('Đăng ký thành công!');
         window.location.href = "index.html";
     });
   });

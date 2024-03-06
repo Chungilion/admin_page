@@ -45,7 +45,6 @@ loginForm.addEventListener('submit', (event) => {
   const formData = new FormData(event.target);
   const username = formData.get('username');
   const password = formData.get('password');
-  // validation
   if (validateEmail(username) === false) {
     loginStatusNoti(false, 'Email không hợp lệ.');
     return;
@@ -58,45 +57,30 @@ loginForm.addEventListener('submit', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Get reference to the button
     var backbutton = document.getElementById('topRightButton_3');
-  
-    // Add click event listener to the button
     backbutton.addEventListener('click', function() {
-        // Redirect to admin.html
         window.location.href = 'index.html';
     });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Get reference to the button
     var button = document.getElementById('topRightButton');
-  
-    // Add click event listener to the button
     button.addEventListener('click', function() {
-        // Redirect to admin.html
         window.location.href = 'admin_login.html';
     });
   });
   
   document.addEventListener('DOMContentLoaded', function() {
-    // Get reference to the button
     var button = document.getElementById('topRightButton_2');
-  
-    // Add click event listener to the button
     button.addEventListener('click', function() {
-        // Redirect to admin.html
         window.location.href = 'index.html';
     });
   });
   
   document.addEventListener('DOMContentLoaded', function() {
-    // Get reference to the button
     var button = document.getElementById('registry');
   
-    // Add click event listener to the button
     button.addEventListener('click', function() {
-        // Redirect to admin.html
         window.location.href = 'register.html';
     });
   });

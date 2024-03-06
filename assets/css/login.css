@@ -377,18 +377,17 @@
 
 
 .login__status_noti {
-    display: none; /* Initially hide the notification */
+    display: none; 
     position: fixed;
     top: 20px;
     right: 20px;
     padding: 10px 20px;
-    background-color: #ff0000; /* Red background color */
-    color: #ffffff; /* White text color */
+    background-color: #ff0000; 
+    color: #ffffff; 
     border-radius: 5px;
-    z-index: 9999; /* Ensure the notification is above other elements */
-    /* Add any other styles you want for the notification container */
+    z-index: 9999; 
 }
 
 .login__status_noti.show {
-    display: block; /* Show the notification when it has the 'show' class */
+    display: block; 
 }

@@ -4,15 +4,14 @@ function submitForm() {
   const examType = document.getElementById('examType').value;
   const questionList = document.getElementById('questionList').value;
 
-  // Create a string containing the information to display
+
   const displayText = `
-      <h2>Exam Information:</h2>
-      <p><strong>Exam Name:</strong> ${examName}</p>
-      <p><strong>Exam Description:</strong> ${examDescription}</p>
-      <p><strong>Exam Type:</strong> ${examType}</p>
-      <p><strong>Question List:</strong> ${questionList}</p>
+      <h2>Thông tin bài kiểm tra:</h2>
+      <p><strong>Tên bài kiểm tra:</strong> ${examName}</p>
+      <p><strong>Miêu tả:</strong> ${examDescription}</p>
+      <p><strong>Loại bài kiểm tra:</strong> ${examType}</p>
+      <p><strong>Danh sách câu hỏi:</strong> ${questionList}</p>
   `;
 
-  // Update the displayInfo div with the information
   document.getElementById('displayInfo').innerHTML = displayText;
 }

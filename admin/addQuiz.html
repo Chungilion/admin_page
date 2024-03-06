@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Information Form</title>
+    <title>Thông tin bài kiểm tra</title>
 </head>
 <body>
-    <h1>Exam Information Form</h1>
+    <h1>Thông tin bài kiểm tra</h1>
     <form id="examForm">
-        <label for="examName">Exam Name:</label>
+        <label for="examName">Tên bài kiểm tra:</label>
         <input type="text" id="examName" required><br>
         
-        <label for="examDescription">Exam Description:</label><br>
+        <label for="examDescription">Miêu tả:</label><br>
         <textarea id="examDescription" rows="4" cols="50" required></textarea><br>
         
-        <label for="examType">Exam Type:</label>
+        <label for="examType">Loại bài kiểm tra:</label>
         <select id="examType" required>
-            <option value="free">Free</option>
-            <option value="timed">Timed</option>
+            <option value="free">Tự do</option>
+            <option value="timed">Tính giờ</option>
         </select><br>
         
-        <label for="questionList">Question List:</label><br>
+        <label for="questionList">Danh sách câu hỏi:</label><br>
         <textarea id="questionList" rows="6" cols="50" required></textarea><br>
         
-        <button type="button" onclick="submitForm()">Submit</button>
+        <button type="submit" onclick="submitForm()">Xác nhận</button>
     </form>
 
     <div id="displayInfo"></div>
