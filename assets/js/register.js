@@ -64,11 +64,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (validateEmail(email) === false) {
           loginStatusNoti(false, 'Email không hợp lệ.');
+          alert("Email không hợp lệ!");
           return;
         }
 
         if (existingUser) {
-            alert('User already exists');
+            alert('Người dùng đã tồn tại!');
             return;
         }
         
@@ -82,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update the users data in localStorage
         localStorage.setItem('users', JSON.stringify(users));
         
-        alert('Registration successful!');
+        alert('Đăng ký thành công!');
         window.location.href = "index.html";
     });
   });

@@ -39,7 +39,7 @@ const passwordValidation = (password) => {
 };
 
 
-const loginForm = document.getElementById('login_form_id');
+/*const loginForm = document.getElementById('login_form_id');
 loginForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
@@ -55,7 +55,7 @@ loginForm.addEventListener('submit', (event) => {
   }else {
     loginStatusNoti(false, 'Tài khoản hoặc mật khẩu không hợp lệ.');
   }
-});
+});*/
 
 document.addEventListener('DOMContentLoaded', function() {
   // Get reference to the button
@@ -106,11 +106,12 @@ document.addEventListener('DOMContentLoaded', function() {
       
       if (validateEmail(email) === false) {
         loginStatusNoti(false, 'Email không hợp lệ.');
+        alert("Email không hợp lệ!");
         return;
       }
 
       if (user) {
-          alert('Login successful!');
+          alert('Đăng nhập thành công!');
           window.location.href = './user/main.html';
       } 
   });
